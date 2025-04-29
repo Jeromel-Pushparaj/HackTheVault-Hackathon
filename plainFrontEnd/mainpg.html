@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IT DOMAINs</title>
-    <link rel="stylesheet" href="mainpg.css" />
+    <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
     <div class="nav">
@@ -12,16 +12,24 @@
         <h1>app</h1>
       </div>
       <div>
-        <button class="home"><span>Home</span></button>
+        <a href="home.html"
+          ><button class="home"><span>Home</span></button></a
+        >
       </div>
       <div>
-        <button class="dashboard"><span>Dashboard</span></button>
+        <a href="status.html"
+          ><button class="dashboard"><span>Dashboard</span></button></a
+        >
       </div>
       <div>
-        <button class="tra"><span>Training</span></button>
+        <a href="mainpg.html"
+          ><button class="tra"><span>Training</span></button></a
+        >
       </div>
       <div>
-        <button class="res"><span>ResumeBuilder</span></button>
+        <a href="resume.html"
+          ><button class="res"><span>ResumeBuilder</span></button></a
+        >
       </div>
 
       <div style="margin-right: 55px; padding-right: 20px">
@@ -32,7 +40,7 @@
             height: 70px;
             border-radius: 50%;
           "
-          src="download.png"
+          src="/static/images/download.png"
           alt=""
         />
       </div>
@@ -40,8 +48,6 @@
     <main class="container">
       <h1 class="heading">CHOOSE YOUR DOMAIN</h1>
       <p class="description"></p>
-
-      <div class="tab">Role-based Roadmaps</div>
 
       <div class="roadmap-grid">
         <button class="roadmap-card">Frontend</button>

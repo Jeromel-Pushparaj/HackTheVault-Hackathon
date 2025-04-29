@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Status</title>
+    <link rel="stylesheet" href="status.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <div style="display: inline-block; flex: 2; margin-left: 20px">
+        <h1>app</h1>
+      </div>
+      <div>
+        <a href="home.html"
+          ><button class="home"><span>Home</span></button></a
+        >
+      </div>
+      <div>
+        <a href="status.html"
+          ><button class="dashboard"><span>Dashboard</span></button></a
+        >
+      </div>
+      <div>
+        <a href="mainpg.html"
+          ><button class="tra"><span>Training</span></button></a
+        >
+      </div>
+      <div>
+        <a href="resume.html"
+          ><button class="res"><span>ResumeBuilder</span></button></a
+        >
+      </div>
+      <div style="margin-right: 55px; padding-right: 20px">
+        <img
+          style="
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+          "
+          src="/static/images/download.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <main class="container">
+      <h1 class="heading">Student Status</h1>
+      <p class="description">Student progress and details</p>
+
+      <div class="status-container">
+        <div class="status-circle" id="progress-circle">
+          <span id="progress-text">0%</span>
+        </div>
+        <div class="status-circle" id="status-circle">
+          <span id="status-text">Not Started</span>
+        </div>
+      </div>
+
+      <div class="details-box">
+        <h3>Student Details on Course Completion</h3>
+      </div>
+    </main>
+
+    <script>
+      const progressCircle = document.getElementById("progress-circle");
+      const progressText = document.getElementById("progress-text");
+      const statusCircle = document.getElementById("status-circle");
+      const statusText = document.getElementById("status-text");
+
+      let currentProgress = 0;
+      let currentStatus = "Not Started";
+
+      function updateProgress(newProgress, newStatus) {
+        currentProgress = newProgress;
+        currentStatus = newStatus;
+
+        progressCircle.style.setProperty("--progress", `${currentProgress}%`);
+        progressText.textContent = `${currentProgress}%`;
+        statusText.textContent = currentStatus;
+
+        switch (currentStatus) {
+          case "Not Started":
+            statusCircle.style.borderColor = "#334155";
+            statusText.style.color = "#cbd5e1";
+            break;
+          case "In Progress":
+            statusCircle.style.borderColor = "#a855f7";
+            statusText.style.color = "#a855f7";
+            break;
+          case "Completed":
+            statusCircle.style.borderColor = "#16a34a";
+            statusText.style.color = "#16a34a";
+            break;
+          default:
+            statusCircle.style.borderColor = "#334155";
+            statusText.style.color = "#cbd5e1";
+        }
+      }
+
+      // Simulate progress updates (replace with your actual data source)
+      function simulateProgress() {
+        let interval = setInterval(() => {
+          if (currentProgress < 100) {
+            currentProgress += 10;
+            updateProgress(currentProgress, "In Progress");
+          } else {
+            updateProgress(100, "Completed");
+            clearInterval(interval);
+          }
+        }, 500);
+      }
+
+      // You can call this function to start the simulation
+      simulateProgress();
+    </script>
+  </body>
+</html>
