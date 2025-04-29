@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Domain Selector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <link rel="stylesheet" href="jobdec.css" />
+  </head>
+  <body class="bg-gray-800">
+    <div class="container">
+      <h1 class="heading">Find Your Ideal Job Domain</h1>
+      <p class="description">
+        Select the domains you are interested in to discover the job
+        opportunities that align with your preferences.
+      </p>
+
+      <div class="domain-selection">
+        <h2 class="domain-selection-title">Select Your Interests</h2>
+        <div class="domain-list">
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="web-development"
+              name="domain"
+              value="Web Development"
+            />
+            <label for="web-development">Web Development</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="mobile-development"
+              name="domain"
+              value="Mobile Development"
+            />
+            <label for="mobile-development">Mobile Development</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="data-science"
+              name="domain"
+              value="Data Science"
+            />
+            <label for="data-science">Data Science</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="artificial-intelligence"
+              name="domain"
+              value="Artificial Intelligence"
+            />
+            <label for="artificial-intelligence">Artificial Intelligence</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="cloud-computing"
+              name="domain"
+              value="Cloud Computing"
+            />
+            <label for="cloud-computing">Cloud Computing</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="cyber-security"
+              name="domain"
+              value="Cyber Security"
+            />
+            <label for="cyber-security">Cyber Security</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="game-development"
+              name="domain"
+              value="Game Development"
+            />
+            <label for="game-development">Game Development</label>
+          </div>
+          <div class="domain-checkbox">
+            <input
+              type="checkbox"
+              id="blockchain-development"
+              name="domain"
+              value="Blockchain Development"
+            />
+            <label for="blockchain-development">Blockchain Development</label>
+          </div>
+        </div>
+        <button id="submit-domains" class="submit-button">
+          Show Recommended Jobs
+        </button>
+      </div>
+
+      <div
+        class="recommendation"
+        id="recommendation-section"
+        style="display: none"
+      >
+        <h2 class="recommendation-title">Recommended Jobs</h2>
+        <p class="recommended-jobs" id="recommended-jobs-list"></p>
+      </div>
+    </div>
+
+    <script>
+      const domainCheckboxes = document.querySelectorAll(
+        'input[name="domain"]'
+      );
+      const submitButton = document.getElementById("submit-domains");
+      const recommendationSection = document.getElementById(
+        "recommendation-section"
+      );
+      const recommendedJobsList = document.getElementById(
+        "recommended-jobs-list"
+      );
+
+      const jobDomains = {
+        "Web Development": [
+          "Frontend Developer",
+          "Backend Developer",
+          "Full Stack Developer",
+          "UI/UX Designer",
+          "Web Application Developer",
+        ],
+        "Mobile Development": [
+          "Android Developer",
+          "iOS Developer",
+          "Mobile App Developer",
+          "React Native Developer",
+          "Flutter Developer",
+        ],
+        "Data Science": [
+          "Data Scientist",
+          "Data Analyst",
+          "Machine Learning Engineer",
+          "Big Data Engineer",
+          "Business Intelligence Analyst",
+        ],
+        "Artificial Intelligence": [
+          "AI Engineer",
+          "Machine Learning Researcher",
+          "Computer Vision Engineer",
+          "Natural Language Processing (NLP) Engineer",
+          "Robotics Engineer",
+        ],
+        "Cloud Computing": [
+          "Cloud Architect",
+          "Cloud Engineer",
+          "DevOps Engineer",
+          "Site Reliability Engineer (SRE)",
+          "Cloud Security Engineer",
+        ],
+        "Cyber Security": [
+          "Security Analyst",
+          "Security Engineer",
+          "Penetration Tester",
+          "Security Architect",
+          "Information Security Manager",
+        ],
+        "Game Development": [
+          "Game Developer",
+          "Game Designer",
+          "Game Programmer",
+          "Game Artist",
+          "Game Tester",
+        ],
+        "Blockchain Development": [
+          "Blockchain Developer",
+          "Smart Contract Developer",
+          "Cryptocurrency Developer",
+          "Blockchain Architect",
+          "Decentralized Application (DApp) Developer",
+        ],
+      };
+
+      submitButton.addEventListener("click", () => {
+        const selectedDomains = Array.from(domainCheckboxes)
+          .filter((checkbox) => checkbox.checked)
+          .map((checkbox) => checkbox.value);
+
+        const recommendedJobs = [];
+        selectedDomains.forEach((domain) => {
+          recommendedJobs.push(...jobDomains[domain]);
+        });
+
+        if (recommendedJobs.length > 0) {
+          recommendationSection.style.display = "block";
+          recommendedJobsList.textContent = recommendedJobs.join(", ");
+        } else {
+          recommendationSection.style.display = "none";
+          recommendedJobsList.textContent = "";
+          alert("Please select at least one domain to see подходящие jobs.");
+        }
+      });
+    </script>
+  </body>
+</html>
