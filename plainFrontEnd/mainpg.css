@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f172a;
+    color: #ffffffd9;
+  }
+  .nav{
+    display: flex;
+    height: 130px;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#a78bfa ;
+    width: 100%;
+  }
+
+
+.home {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    transform: scale(0.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+  
+  .home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  .home:hover {
+    color: #fff;
+  }
+  
+  .home:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  .dashboard {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    transform: scale(0.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  
+  .dashboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  .dashboard:hover {
+    color: #fff;
+  }
+  
+  .dashboard:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  .tra {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 155px;
+    transform: scale(0.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  
+  .tra::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  .tra:hover {
+    color: #fff;
+  }
+  
+  .tra:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .res {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 155px;
+    transform: scale(0.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  
+  .res::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  .res:hover {
+    color: #fff;
+  }
+  
+  .res:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  .heading {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(to right, #a78bfa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    animation: losein;
+    animation-timeline: view();
+  }
+  
+  .description {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+  
+  .tab {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #cbd5e1;
+    font-weight: 500;
+    margin-bottom: 40px;
+
+  }
+  @keyframes losein {
+    0%{
+        transform: scale(0.1);
+    }
+    40%{
+        transform: scale(1);
+    }
+    50%{
+        transform:scale(3);
+    }
+    60%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(0.1);
+    }
+    
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .roadmap-card {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    font-size: 18px;
+    font-weight: 500;
+    color: #cbd5e1;
+    position: relative;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .roadmap-card:hover {
+    transform: translateY(-5px);
+    background-color: #273449;
+  }
+  
+  .badge {
+    background-color: #a855f7;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    margin-left: 8px;
+  }
+  

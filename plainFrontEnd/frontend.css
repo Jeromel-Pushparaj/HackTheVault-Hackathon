@@ -1,0 +1,224 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.back-link {
+    text-decoration: none;
+    color: #555;
+    margin-right: 20px;
+}
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+.action-button {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.action-button.clicked {
+    background-color: #007bff;
+    color: white;
+}
+.title-section {
+    margin-bottom: 15px;
+}
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+.subtitle {
+    color: #777;
+    font-size: 1em;
+}
+.navigation {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+.nav-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.nav-link.active {
+    border-bottom: 2px solid #ffc107;
+}
+.progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #555;
+}
+.progress-text {
+    font-weight: bold;
+}
+.track-progress {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+.expandable-section {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.expandable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+.expandable-header::after {
+    content: '\25BE'; /* Down arrow */
+    font-size: 1.2em;
+}
+.expandable-header.open::after {
+    content: '\25B4'; /* Up arrow */
+}
+.expandable-content {
+    padding-top: 10px;
+    color: #666;
+}
+.language-buttons {
+    display: none;
+    gap: 10px;
+    margin-top: 10px;
+}
+.language-button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none; /* Make the button act like a link */
+}
+.suggest-changes {
+    color: #007bff;
+    text-decoration: none;
+    float: right;
+    font-size: 0.9em;
+}
+
+/* Login/Signup Modal Styles (Keep these) */
+.login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.login-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login-button.google {
+    background-color: #db4437;
+}
+
+.login-button.facebook {
+    background-color: #3b5998;
+}
+
+.auth-separator {
+    text-align: center;
+    margin: 15px 0;
+    color: #777;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-form p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-form a {
+    color: #007bff;
+    text-decoration: none;
+}

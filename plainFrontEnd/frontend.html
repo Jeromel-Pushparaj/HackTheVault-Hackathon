@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Developer Roadmap</title>
+    <link rel="stylesheet" href="frontend.css" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" class="back-link">&larr; All Roadmaps</a>
+      <div class="actions">
+        <button class="action-button" onclick="openLoginModal()">
+          Bookmarks
+        </button>
+        <button class="action-button" onclick="toggleButton(this)">
+          Schedule Learning Time
+        </button>
+        <button class="action-button" onclick="toggleButton(this)">
+          Download
+        </button>
+        <button class="action-button" onclick="toggleButton(this)">
+          Share
+        </button>
+      </div>
+    </div>
+
+    <div class="title-section">
+      <h1 class="main-title">Frontend Developer</h1>
+      <p class="subtitle">
+        Step by step guide to becoming a modern frontend developer in 2025
+      </p>
+    </div>
+
+    <div class="navigation">
+      <a href="#" class="nav-link active">Roadmap</a>
+      <a href="#" class="nav-link">Projects</a>
+      <a href="#" class="suggest-changes">Suggest Changes</a>
+    </div>
+
+    <div class="progress-bar">
+      <span class="progress-text">0% DONE</span>
+      <span>0 of 115 Done</span>
+      <a href="#" class="track-progress">? Track Progress</a>
+    </div>
+
+    <div class="expandable-section">
+      <div class="expandable-header" onclick="toggleLanguages(this)">
+        <span>&#9432; What is a Frontend Developer?</span>
+      </div>
+      <div class="expandable-content">
+        <p>
+          A frontend developer builds the user interface and user experience of
+          websites and web applications. They work with HTML, CSS, and
+          JavaScript to create the visual aspects and interactive elements that
+          users directly interact with.
+        </p>
+        <div class="language-buttons">
+          <a href="html-links.html" class="language-button">HTML</a>
+          <a href="css-links.html" class="language-button">CSS</a>
+          <a href="javascript-links.html" class="language-button">JavaScript</a>
+          <a href="react-links.html" class="language-button">React</a>
+          <a href="angular-links.html" class="language-button">Angular</a>
+          <a href="vue-links.html" class="language-button">Vue.js</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="loginModal" class="login-modal">
+      <div class="login-modal-content">
+        <span class="close-button" onclick="closeLoginModal()">&times;</span>
+        <h2>Sign in to Bookmark</h2>
+        <div class="login-options">
+          <a href="#" class="login-button google">Sign in with Google</a>
+          <a href="#" class="login-button facebook">Sign in with Facebook</a>
+        </div>
+        <div class="auth-separator">OR</div>
+        <div class="auth-form">
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button type="submit">Sign In</button>
+          <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+        <div class="auth-separator">OR</div>
+        <div class="auth-form">
+          <input type="text" placeholder="Username" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button type="submit">Sign Up</button>
+          <p>Already have an account? <a href="#">Sign In</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleButton(button) {
+        button.classList.toggle("clicked");
+      }
+
+      // Get the modal
+      var modal = document.getElementById("loginModal");
+
+      // Function to open the login modal
+      function openLoginModal() {
+        modal.style.display = "block";
+      }
+
+      // Function to close the login modal
+      function closeLoginModal() {
+        modal.style.display = "none";
+      }
+
+      // Close the modal if the user clicks outside of it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      function toggleLanguages(header) {
+        const content = header.nextElementSibling;
+        const languageButtons = content.querySelector(".language-buttons");
+        const paragraph = content.querySelector("p");
+
+        header.classList.toggle("open");
+
+        if (header.classList.contains("open")) {
+          languageButtons.style.display = "flex";
+          paragraph.style.display = "none";
+        } else {
+          languageButtons.style.display = "none";
+          paragraph.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
