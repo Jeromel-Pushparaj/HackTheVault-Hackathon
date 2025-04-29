@@ -1,0 +1,12 @@
+{
+	"db_server":"db",
+	"db_username":"root",
+	"db_password":"example",
+	"db_name":"app",
+
+	"base_path": "/",
+	"upload_path": "PATH FOR FILE UPLOAD",
+	
+	"mongo_username":"admin",
+	"mongo_password":"password"
+}
