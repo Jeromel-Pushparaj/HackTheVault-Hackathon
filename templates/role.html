@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+
+{% block title %}Role Path{% endblock %}
+
+{% block content %}
+<div class="header">
+      <a href="#" class="back-link">&larr; Back</a>
+      <div class="actions"></div>
+    </div>
+
+    <div class="title-section">
+      <h1 class="main-title">{{ path['skill'] }}</h1>
+      <p class="subt:">
+        Step by step guide to becoming a pro in {{ path['skill'] }} in 2025
+      </p>
+    </div>
+
+    <div class="progress-bar">
+      <span class="progress-text">0% DONE</span>
+      <span>0 of 115 Done</span>
+      <a href="#" class="track-progress">? Track Progress</a>
+    </div>
+
+    <div class="expandable-section">
+      <div class="expandable-header" onclick="toggleLanguages(this)">
+        <span>&#9432; What is a {{ path['skill'] }}?</span>
+      </div>
+      <div class="expandable-content">
+        <p>
+          A frontend developer builds the user interface and user experience of
+          websites and web applications. They work with HTML, CSS, and
+          JavaScript to create the visual aspects and interactive elements that
+          users directly interact with.
+        </p>
+        <div class="language-buttons">
+          <button class="language-button" onclick="openLoginModal('HTML')">
+            HTML
+          </button>
+          <button class="language-button" onclick="openLoginModal('CSS')">
+            CSS
+          </button>
+          <button
+            class="language-button"
+            onclick="openLoginModal('JavaScript')"
+          >
+            JavaScript
+          </button>
+          <button class="language-button" onclick="openLoginModal('React')">
+            React
+          </button>
+          <button class="language-button" onclick="openLoginModal('Angular')">
+            Angular
+          </button>
+          <button class="language-button" onclick="openLoginModal('Vue.js')">
+            Vue.js
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loginModal" class="login-modal">
+      <div class="login-modal-content">
+        <span class="close-button" onclick="closeLoginModal()">&times;</span>
+        <h2 id="modal-title">Sign in</h2>
+        <div id="modal-content">
+          <p>Please sign in to access this content.</p>
+          <div class="login-options">
+            <a href="#" class="login-button google">Sign in with Google</a>
+            <a href="#" class="login-button facebook">Sign in with Facebook</a>
+          </div>
+          <div class="auth-separator">OR</div>
+          <div class="auth-form">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Sign In</button>
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+          </div>
+          <div class="auth-separator">OR</div>
+          <div class="auth-form">
+            <input type="text" placeholder="Username" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Sign Up</button>
+            <p>Already have an account? <a href="#">Sign In</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="projectsModal" class="login-modal">
+      <div class="projects-modal-content">
+        <span class="close-button" onclick="closeProjectsModal()">&times;</span>
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Single Page CV</h3>
+            <p>Create a single-page CV to showcase your career history.</p>
+          </div>
+          <div class="project-card">
+            <h3>Basic HTML Website</h3>
+            <p>Create a simple website using only HTML.</p>
+          </div>
+          <div class="project-card">
+            <h3>Personal Portfolio</h3>
+            <p>Build a responsive personal portfolio website.</p>
+          </div>
+          <div class="project-card">
+            <h3>Changelog Component</h3>
+            <p>Create a changelog component for a website.</p>
+          </div>
+          <div class="project-card">
+            <h3>Testimonial Cards</h3>
+            <p>Create testimonial cards for a website.</p>
+          </div>
+          <div class="project-card">
+            <h3>Datepicker UI</h3>
+            <p>Create a simple datepicker UI.</p>
+          </div>
+          <div class="project-card">
+            <h3>Accessible Form UI</h3>
+            <p>Create an accessible form UI.</p>
+          </div>
+          <div class="project-card">
+            <h3>Image Grid Layout</h3>
+            <p>Create a grid layout of images.</p>
+          </div>
+          <div class="project-card">
+            <h3>Tooltip UI</h3>
+            <p>Create a tooltip for navigation items.</p>
+          </div>
+          <div class="project-card">
+            <h3>Tabs</h3>
+            <p>Create simple tabs component.</p>
+          </div>
+          <div class="project-card">
+            <h3>Cookie Consent</h3>
+            <p>Create a simple cookie consent banner.</p>
+          </div>
+          <div class="project-card">
+            <h3>Restricted Textarea</h3>
+            <p>Create a textarea with character limit.</p>
+          </div>
+          <div class="project-card">
+            <h3>Accordion</h3>
+            <p>Create an accordion component.</p>
+          </div>
+          <div class="project-card">
+            <h3>Age Calculator</h3>
+            <p>Create an age calculator application.</p>
+          </div>
+          <div class="project-card">
+            <h3>Flash Cards</h3>
+            <p>Create a flash card application.</p>
+          </div>
+          <div class="project-card">
+            <h3>Custom Dropdown</h3>
+            <p>Create a custom dropdown component.</p>
+          </div>
+          <div class="project-card">
+            <h3>Task Tracker</h3>
+            <p>Create a task tracker (to-do list).</p>
+          </div>
+          <div class="project-card">
+            <h3>GitHub Repo Finder</h3>
+            <p>Create a GitHub repository finder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

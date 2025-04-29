@@ -12,7 +12,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 # Load CSV
-df = pd.read_csv('/content/UpdatedResumeDataSet.csv')
+df = pd.read_csv(r'D:\HackTheVault-Hackathon\utils\UpdatedResumeDataSet.csv')
 df = df.drop_duplicates()
 
 # === STEP 2: Preprocessing ===

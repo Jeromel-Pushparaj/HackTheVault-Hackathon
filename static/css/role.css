@@ -1,9 +1,4 @@
-body {
-    font-family: sans-serif;
-    margin: 20px;
-    background-color: #000; /* Black background */
-    color: #eee; /* Light text for better contrast on black */
-}
+
 .header {
     display: flex;
     align-items: center;

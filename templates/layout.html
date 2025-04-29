@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/role.css') }}">
+</head>
+<body>
+    <div class="nav">
+      <div style="display: inline-block; flex: 2; margin-left: 20px">
+        <h1>app</h1>
+      </div>
+      <div>
+        <a href="{{ url_for('app.home') }}"" class="home"><span>Home</span></a>
+      </div>
+      <div>
+        <button class="dashboard"><span>Dashboard</span></button>
+      </div>
+      <div>
+        <a href="{{ url_for('app.training') }}" class="tra"><span>Training</span></a>
+      </div>
+      <div>
+        <button class="res"><span>ResumeBuilder</span></button>
+      </div>
+
+      <div style="margin-right: 55px; padding-right: 20px">
+        <img
+          style="
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+          "
+          src="{{ url_for('static', filename='images/download.png') }}""
+          alt=""
+        />
+      </div>
+    </div>
+ 
+    {% block content %}{% endblock %}
+</body>
+<script src="{{url_for('static', filename='js/role.js')}}"></script>
+</html>

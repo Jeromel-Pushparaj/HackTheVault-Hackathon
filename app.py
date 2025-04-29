@@ -1,10 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask
+from pymongo import MongoClient
+from routes.app_routes import app_bp
 
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
 
-@app.route('/')
-def home():
-    return render_template('index.html')  # Make sure index.html is inside templates/
+client = MongoClient(app.config['MONGO_URI'])
+db = client['app']
+
+app.register_blueprint(app_bp)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
+

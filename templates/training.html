@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Training{% endblock %}
+
+{% block content %}
+<main class="container">      
+    <h1 class="heading">CHOOSE YOUR DOMAIN</h1>
+    <p class="description"></p>
+    <div class="tab">Role-based Roadmaps</div>
+    <div class="roadmap-grid">
+                    {% for role in roles %}
+                    <a class="roadmap-card" href="{{ url_for('app.getPath', role_name = role['skill']) }}">{{ role['skill'] }}</a>
+                    {% endfor %}
+   </div>
+</main>
+
+{% endblock %}
+
