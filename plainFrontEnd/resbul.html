@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="resbul.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+  </head>
+  <body class="bg-gray-800 font-inter">
+    <div class="container">
+      <h1 class="heading">Build Your Resume</h1>
+
+      <div class="grid-container">
+        <form id="resumeForm" class="form-container">
+          <div>
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              placeholder="Kawa"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              placeholder="Shinto"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="kawa.shinto@example.com"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+1 285 555 1100"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="address" class="form-label">Address</label>
+            <input
+              type="text"
+              id="address"
+              placeholder="123 Main Street, Anytown"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="jobTitle" class="form-label">Job Title</label>
+            <input
+              type="text"
+              id="jobTitle"
+              placeholder="Full Stack Web Developer"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="links" class="form-label"
+              >Links (Comma-separated)</label
+            >
+            <input
+              type="text"
+              id="links"
+              placeholder="linkedin.com/in/kawa-shinto, github.com/kawa-shinto"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="education" class="form-label">Education</label>
+            <input
+              type="text"
+              id="education"
+              placeholder="XYZ University, New Delhi, India"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="fieldOfStudy" class="form-label">Field of Study</label>
+            <input
+              type="text"
+              id="fieldOfStudy"
+              placeholder="Computer Science"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="graduationDate" class="form-label"
+              >Graduation Month/Year</label
+            >
+            <input
+              type="text"
+              id="graduationDate"
+              placeholder="Month Year"
+              class="form-input"
+            />
+          </div>
+
+          <button type="submit" class="submit-button">Update Resume</button>
+        </form>
+
+        <div class="preview-container">
+          <h2 class="preview-heading">Resume Preview</h2>
+          <div id="resumePreview">
+            <h3 class="preview-name">Kawa Shinto</h3>
+            <p class="preview-text">kawa.shinto@example.com</p>
+            <p class="preview-text">+1 285 555 1100</p>
+
+            <h4 class="preview-heading mt-4">Education</h4>
+            <p class="preview-text">
+              XYZ University, New Delhi, India - Computer Science (Month Year)
+            </p>
+
+            <h4 class="preview-heading mt-4">Experience</h4>
+            <p class="preview-text">
+              Full Stack Web Developer - 123 Main Street, Anytown
+            </p>
+
+            <h4 class="preview-heading mt-4">Links</h4>
+            <ul class="preview-links">
+              <li>linkedin.com/in/kawa-shinto</li>
+              <li>github.com/kawa-shinto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const resumeForm = document.getElementById("resumeForm");
+      const resumePreview = document.getElementById("resumePreview");
+
+      resumeForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const address = document.getElementById("address").value;
+        const jobTitle = document.getElementById("jobTitle").value;
+        const linksInput = document.getElementById("links").value;
+        const education = document.getElementById("education").value;
+        const fieldOfStudy = document.getElementById("fieldOfStudy").value;
+        const graduationDate = document.getElementById("graduationDate").value;
+
+        const links = linksInput.split(",").map((link) => link.trim());
+
+        let resumeContent = `
+          <h3 class="preview-name">${firstName} ${lastName}</h3>
+          <p class="preview-text">${email}</p>
+          <p class="preview-text">${phone}</p>
+
+          <h4 class="preview-heading mt-4">Education</h4>
+          <p class="preview-text">${education} - ${fieldOfStudy} (${graduationDate})</p>
+
+          <h4 class="preview-heading mt-4">Experience</h4>
+          <p class="preview-text">${jobTitle} - ${address}</p>
+
+          <h4 class="preview-heading mt-4">Links</h4>
+          <ul class="preview-links">
+            ${links.map((link) => `<li>${link}</li>`).join("")}
+          </ul>
+        `;
+
+        resumePreview.innerHTML = resumeContent;
+      });
+    </script>
+  </body>
+</html>
