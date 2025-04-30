@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
+from utils import asker
 
 # Download required NLTK data
 nltk.download('punkt')
@@ -39,11 +40,14 @@ model = RandomForestClassifier()
 model.fit(X, y)
 
 # === STEP 5: Predict Category of New Resume ===
-new_resume = "skilled in Python, machine learning, data analysis, and Pandas"
-processed_resume = preprocess_text(new_resume)
-resume_vector = tfidf.transform([processed_resume])
-predicted_category = model.predict(resume_vector)
-print("Predicted Category:", predicted_category[0])
+# "skilled in Python, machine learning, data analysis, and Pandas" 
+# new_resume = str(input("Enter skill: "))
+def predictDomain(new_resume):
+    processed_resume = preprocess_text(new_resume)
+    resume_vector = tfidf.transform([processed_resume])
+    predicted_category = model.predict(resume_vector)
+    print("Predicted Category:", predicted_category[0])
+    return predicted_category[0]
 
 # === STEP 6: Suggest Top Skills for a Given Role ===
 def suggest_skills_for_role(role_input, top_n=20):
@@ -64,6 +68,11 @@ def suggest_skills_for_role(role_input, top_n=20):
     for rank, (skill, score) in enumerate(top_skills, start=1):
         print(f"{rank}. {skill}")
 
+    output = f"\nTop {top_n} skills for '{role_input}':\n"
+    output += "\n".join([f"{rank}. {skill}" for rank, (skill, score) in enumerate(top_skills, start=1)])
+    prompt = "Recomand a courses or resources for this skills in a structured way " + output
+    return asker.skillRecommand(prompt)
+
 # === STEP 7: Ask User for Role and Show Suggested Skills ===
-role = input("Enter a job role to get suggested skills: ")
-suggest_skills_for_role(role)
+# role = input("Enter a job role to get suggested skills: ")
+# suggest_skills_for_role(role)

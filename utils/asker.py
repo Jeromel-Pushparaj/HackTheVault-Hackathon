@@ -70,6 +70,17 @@ def Resources(role):
         print(response)
     else:
         print("Failed to get a response from the Gemini API.")
+def skillRecommand(prompt):
+    # Replace with your actual API key and prompt. DO NOT HARDCODE IN PRODUCTION
+    api_key = 'AIzaSyCU9mAQIM_YO6uYgQ_LjpXAQ8B6WSyZy6M'  # DO NOT COMMIT YOUR API KEY TO VERSION CONTROL
+    model = 'gemini-2.0-flash'  # Or 'gemini-pro-vision', 'gemini-2.0-flash', etc.
 
+    # Get the response from Gemini
+    response = get_gemini_response(prompt, api_key, model)
 
-Resources('Automation Testing')
+    if response is not None:
+        print("Model response:")
+        print(response)
+    else:
+        print("Model failed to get the result.")
+    return response
